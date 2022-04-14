@@ -11,7 +11,7 @@ export default function MenuRoute(){
     return(
         <div>
             {menu.map((item)=>
-             <BasicItem item={item}/>
+             <BasicItem key={item.id} item={item}/>
             )}
         </div>
     )

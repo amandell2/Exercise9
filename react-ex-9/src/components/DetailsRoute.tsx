@@ -10,15 +10,15 @@ This component shows all the values of a particular menu item based on the id de
 
 export default function DetailsRoute(){
     const id: string | undefined = useParams().id;
-    const selectedItem = menu.find((item)=> item.id === id);
+    const selectedItem: Item | undefined = menu.find((item)=> item.id === id);
     
     return(
         <div>
-            <p>Name: {selectedItem!.name}</p>
-            <p>Description: {selectedItem!.description}</p>
-            <p>Calories: {selectedItem!.calories}</p>
-            <p>Price: ${(selectedItem!.price).toFixed(2)}</p>
-            {selectedItem!.vegetarian ? <p>Vegetarian</p> : <p>Not Vegetarian</p>}
+            <p>Name: {selectedItem?.name}</p>
+            <p>Description: {selectedItem?.description}</p>
+            <p>Calories: {selectedItem?.calories}</p>
+            <p>Price: ${selectedItem?.price.toFixed(2)}</p>
+            {selectedItem?.vegetarian ? <p>Vegetarian</p> : <p>Not Vegetarian</p>}
         </div>
     )
 };
